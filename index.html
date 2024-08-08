@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aafiya Mediretreats</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/bower_components/owl.carousel/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <style>
+        /* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+.nav {
+  /* position: fixed; */
+  /* top: 0; */
+  left: 0;
+  width: 100%;
+  padding: 15px 200px;
+  background: #4a98f7;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.nav,
+.nav .nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav {
+  justify-content: space-between;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+.nav .logo {
+  font-size: 22px;
+  font-weight: 500;
+}
+.nav .nav-links {
+  column-gap: 20px;
+  list-style: none;
+}
+.nav .nav-links a {
+  transition: all 0.2s linear;
+}
+.nav.openSearch .nav-links a {
+  opacity: 0;
+  pointer-events: none;
+}
+.nav .search-icon {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.nav .search-box {
+  position: absolute;
+  right: 250px;
+  height: 45px;
+  max-width: 555px;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s linear;
+}
+.nav.openSearch .search-box {
+  opacity: 1;
+  pointer-events: auto;
+}
+.search-box .search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  left: 15px;
+  color: #4a98f7;
+  transform: translateY(-50%);
+}
+.search-box input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  background-color: #fff;
+  padding: 0 15px 0 45px;
+}
+
+.nav .navOpenBtn,
+.nav .navCloseBtn {
+  display: none;
+}
+
+/* responsive */
+@media screen and (max-width: 1160px) {
+  .nav {
+    padding: 15px 100px;
+  }
+  .nav .search-box {
+    right: 150px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .nav {
+    padding: 15px 50px;
+  }
+  .nav .search-box {
+    right: 100px;
+    max-width: 400px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav .navOpenBtn,
+  .nav .navCloseBtn {
+    display: block;
+  }
+  .nav {
+    padding: 15px 20px;
+  }
+  .nav .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    max-width: 280px;
+    width: 100%;
+    padding-top: 100px;
+    row-gap: 30px;
+    flex-direction: column;
+    background-color: #11101d;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    z-index: 100;
+  }
+  .nav.openNav .nav-links {
+    left: 0;
+  }
+  .nav .navOpenBtn {
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .nav .navCloseBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .nav .search-box {
+    top: calc(100% + 10px);
+    max-width: calc(100% - 20px);
+    right: 50%;
+    transform: translateX(50%);
+    transform: translateY(50%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+}
+    </style>
+    <!-- Unicons CSS -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+   <!-- <script src="script.js" defer></script> -->
+</head>
+  <body>
+
+    <div class="page-loader">
+        <div class="loader-text">Loading...</div>
+    </div>
+
+    <header class="container">
+        <nav class="navbar justify-content-between">
+            <div class="col-lg-2 col-6">
+                <a href="">
+                    <img src="./Images/aafiya m.png" alt="">
+                </a>
+            </div>
+            <div class="col-lg-1 d-lg-block d-none ">
+                <a href="">
+                    <img src="./Images/dr img.png" alt="" height="60">
+                </a>
+            </div>
+            <div class="col-lg-2 d-lg-block d-none ">
+                <div class="row align-items-center">
+                    <div class="col-md-4">
+                    <img src="./Images/blogger.svg" class="rounded-start" alt="..." height="55">
+                    </div>
+                    <div class="col-md-8">
+                    <p class="mb-0" style="font-size: 12px;">Second Medical Opinion</p>
+                    <p class="fw-bold mb-0"  style="font-size: 12px;">Book Consultation</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-2 d-lg-block d-none ">
+                <div class="row align-items-center">
+                    <div class="col-md-4">
+                    <img src="./Images/phone-call.svg" class="rounded-start" alt="..." height="55">
+                    </div>
+                    <div class="col-md-8">
+                    <p class="mb-0" style="font-size: 12px;">Call Us On</p>
+                    <p class="fw-bold mb-0"  style="font-size: 12px;">985 896 2222</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-2 d-lg-block d-none ">
+                <div class="row align-items-center">
+                    <div class="col-md-4">
+                    <img src="./Images/email.svg" class="rounded-start" alt="..." height="55">
+                    </div>
+                    <div class="col-md-8">
+                    <p class="mb-0" style="font-size: 12px;">Email Us On</p>
+                    <p class="fw-bold mb-0"  style="font-size: 12px;">info@mediretreats.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-1 col-2">
+                <div class="dropdown me-1 align-items-center">
+                    <button type="button p-0" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
+                      <img src="./Images/india.svg" alt="" height="30">
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+            </div>
+        
+        </nav>
+    </header>
+   
+    <nav class="nav">
+        <i class="uil uil-bars navOpenBtn"></i>
+        <a href="#" class="logo">Home</a>
+  
+        <ul class="nav-links mb-0">
+          <i class="uil uil-times navCloseBtn"></i>
+          <li><a href="#">About US</a></li>
+          <li><a href="#">Treatments +</a></li>
+          <li><a href="#">Destination +</a></li>
+          <li><a href="#">Hospital</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Request A Quote</a></li>
+        </ul>
+  
+        <i class="uil uil-search search-icon" id="searchIcon"></i>
+        <div class="search-box">
+          <i class="uil uil-search search-icon"></i>
+          <input type="text" placeholder="Search here..." />
+        </div>
+      </nav>
+
+
+
+    <section class="knee-injury text-light">
+        <div class="container">
+            <div class="row py-5">
+                <div class=" col-lg-6 col-md-8">
+                    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="#" class="text-decoration-none  text-light">Home</a></li>
+                          <li class="breadcrumb-item"><a href="#" class="text-decoration-none  text-light">Treatments</a></li>
+                          <li class="breadcrumb-item"><a href="#" class="text-decoration-none  text-light">Orthopaedics</a></li>
+                          <li class="breadcrumb-item text-light" aria-current="page"> Knee Replacement</li>
+                        </ol>
+                    </nav>
+
+                    <p class="fs-1 fw-bold">Total Knee Replacement</p>
+                    <p class="fs-3">Total knee replacement is a surgery to remove and replace the whole
+                        damage knee joint with an artifical joint.</p>
+
+                    <button type="button" class="btn btn-primary rounded-0">Enquire Now</button>    
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="overview mt-lg-4 mt-3">
+        <div class="container">
+            <div class="d-flex flex-lg-row flex-column justify-content-evenly align-items-center">
+                <div class="col-lg col-md-3 col">
+                    <a class="nav-link my-1" aria-current="page" href="#s-ovex">Overview</a>
+                </div>
+                <div class="col-lg col-md-3 col">
+                    <a class="nav-link my-1" aria-current="page" href="#s-Eligibility">Eligibility</a>
+                </div>
+                <div class="col-lg col-md-3 col">
+                    <a class="nav-link my-1" aria-current="page" href="#s-Prep">Preparation</a>
+                </div>
+                <div class="col-lg col-md-3 col">
+                    <a class="nav-link my-1" aria-current="page" href="#s-Treatment">About Treatment</a>
+                </div>
+                <div class="col-lg col-md-3 col">
+                    <a class="nav-link my-1" aria-current="page" href="#s-Post">Post-Treatment Care</a>
+                </div>
+                <div class="col-lg col-md-3 col">
+                    <a class="nav-link my-1" aria-current="page" href="#s-Recovery">Recovery Tips</a>
+                </div>
+                <div class="col-lg col-md-3 col">
+                    <a class="nav-link my-1" aria-current="page" href="#s-FAQs">FAQs</a>
+                </div>
+                <div class="col-lg col-md-3 col">
+                    <a class="nav-link my-1" aria-current="page" href="#s-Patient">Patient Stories</a>
+                </div>
+            </div>
+            <hr>
+
+            <div class="d-flex justify-content-between my-4 content flex-md-row flex-column-reverse">
+                <div class="d-flex align-items-center justify-content-between my-5 flex-md-row flex-column-reverse s-overview" id="s-ovex">
+                    <div class="col-md-6 col-12 my-2">
+                        <p class="fs-2">Treatment Overviews<span class="red-dot">.</span></p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, cum ducimus? Vero dolores ducimus dicta veritatis, sapiente nam laborum hic!</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, sunt esse quia repellendus eius cupiditate quos, magni harum architecto blanditiis, incidunt alias perferendis recusandae expedita eum quod sint. Sapiente fuga quibusdam sint, rem dolore perspiciatis odio ratione voluptatibus tenetur quidem, iure sed! Assumenda, asperiores. Aliquam incidunt cum ab inventore et.</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis reprehenderit beatae, quibusdam quae dolorem minus inventore.</p>
+                    </div>
+                    <div class="col-md-5 col-12">
+                        <img src="./Images/treatment.jpg" alt="" class="img-fluid" loading="lazy">
+                    </div>
+                    
+                </div>         
+            </div>
+            <div class="d-flex justify-content-between my-5 content flex-md-row flex-column-reverse">
+                <div class="col-md-8 col-12">
+                    <div class="scrolling-content">
+                        <div class="s-overview mb-lg-5 py-3" id="s-Eligibility">
+                            <p class="fs-2">Eligibility For Treatment<span class="red-dot">.</span></p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita officia nulla ut voluptatem quae adipisci unde dicta mollitia fugiat quia, incidunt architecto impedit illum qui! Rerum iusto quibusdam omnis sit perferendis tempora natus tempore, accusamus culpa distinctio veniam! Ipsa, exercitationem!</p>
+                            <p>In general, gastric bypass could be a good option if:</p>
+                            <ul class="ps-0">
+                                <li>The BMI (body mass index) is 40 or more</li>
+                                <li>Your BMI is 30 or more width serve width-related health conditions like type-2</li>
+                                <li>You are willing to make permanent changes in the lifestyle</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="s-overview mb-lg-5 py-3" id="s-Prep">
+                            <p class="fs-2">Preparation Before Treatment<span class="red-dot">.</span></p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita officia nulla ut voluptatem quae adipisci unde dicta mollitia fugiat quia, incidunt architecto impedit illum qui! Rerum iusto quibusdam omnis sit perferendis tempora natus tempore, accusamus culpa distinctio veniam! Ipsa, exercitationem!</p>
+                            <p>In general, gastric bypass could be a good option if:</p>
+                            <ul class="ps-0">
+                                <li>The BMI (body mass index) is 40 or more</li>
+                                <li>Your BMI is 30 or more width serve width-related health conditions like type-2</li>
+                                <li>You are willing to make permanent changes in the lifestyle</li>
+                            </ul>
+                        </div>
+
+                        <div class="s-overview mb-lg-5 py-3" id="s-Treatment">
+                            <p class="fs-2">About Treatment<span class="red-dot">.</span></p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita officia nulla ut voluptatem quae adipisci unde dicta mollitia fugiat quia, incidunt architecto impedit illum qui! Rerum iusto quibusdam omnis sit perferendis tempora natus tempore, accusamus culpa distinctio veniam! Ipsa, exercitationem!</p>
+                            <p>In general, gastric bypass could be a good option if:</p>
+                            <ul class="ps-0">
+                                <li>The BMI (body mass index) is 40 or more</li>
+                                <li>Your BMI is 30 or more width serve width-related health conditions like type-2</li>
+                                <li>You are willing to make permanent changes in the lifestyle</li>
+                            </ul>
+                        </div>
+
+                        <div class="s-overview mb-lg-5 py-3" id="s-Post">
+                            <p class="fs-2">Post-Treatment Care Treatment<span class="red-dot">.</span></p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita officia nulla ut voluptatem quae adipisci unde dicta mollitia fugiat quia, incidunt architecto impedit illum qui! Rerum iusto quibusdam omnis sit perferendis tempora natus tempore, accusamus culpa distinctio veniam! Ipsa, exercitationem!</p>
+                            <p>In general, gastric bypass could be a good option if:</p>
+                            <ul class="ps-0">
+                                <li>The BMI (body mass index) is 40 or more</li>
+                                <li>Your BMI is 30 or more width serve width-related health conditions like type-2</li>
+                                <li>You are willing to make permanent changes in the lifestyle</li>
+                            </ul>
+                        </div>
+
+                        <div class="s-overview mb-lg-5 py-3" id="s-Recovery">
+                            <p class="fs-2">Treatment Recovery Tips<span class="red-dot">.</span></p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita officia nulla ut voluptatem quae adipisci unde dicta mollitia fugiat quia, incidunt architecto impedit illum qui! Rerum iusto quibusdam omnis sit perferendis tempora natus tempore, accusamus culpa distinctio veniam! Ipsa, exercitationem!</p>
+                            <p>In general, gastric bypass could be a good option if:</p>
+                            <ul class="ps-0">
+                                <li>The BMI (body mass index) is 40 or more</li>
+                                <li>Your BMI is 30 or more width serve width-related health conditions like type-2</li>
+                                <li>You are willing to make permanent changes in the lifestyle</li>
+                            </ul>
+                        </div>
+
+                        <div class="s-overview mb-lg-5 py-3" id="s-FAQs">
+                            <p class="fs-2">Treatment FAQs<span class="red-dot">.</span></p>
+                            
+                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                <div class="accordion-item">
+                                  <h2 class="accordion-header bg-light">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                        How so I know the clinic I am searching is verified?
+                                    </button>
+                                  </h2>
+                                  <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">##</div>
+                                  </div>
+                                </div>
+                                <div class="accordion-item">
+                                  <h2 class="accordion-header bg-light">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                        I can't travel alone so can some family member or friend of mine accompany me?
+                                    </button>
+                                  </h2>
+                                  <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Lorem ipsum dolor sit amet.</div>
+                                  </div>
+                                </div>
+                                <div class="accordion-item">
+                                  <h2 class="accordion-header bg-light">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                        Can I see my doctor before I decide and what about my post recovery?
+                                    </button>
+                                  </h2>
+                                  <div id="flush-collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ex dolores adipisci vitae corrupti ut quae quaerat dolorum ea quas? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil, veritatis.</div>
+                                  </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header bg-light">
+                                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseThree">
+                                        How do I share my reports and medical cases with the clinic of my choice?
+                                      </button>
+                                    </h2>
+                                    <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                      <div class="accordion-body">Lorem ipsum dolor sit amet.</div>
+                                    </div>
+                                  </div>
+                              </div>
+                        </div>
+
+                        <div class="s-overview mb-lg-5 py-3" id="s-Patient">
+                            <p class="fs-2">Patient Stories & Videos.<span class="red-dot">.</span></p>
+
+                            <div class="owl-carousel owl-theme">
+                                <div class="item m-1">
+                                    <div class="d-flex">
+                                        <p>Underwent procedure for <br> retinal detachment</p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M19.3 6.3c1 1.1 1.6 2.3 1.6 4.3 0 3.5-2.5 6.6-6 8.2l-.9-1.3c3.3-1.8 4-4.1 4.2-5.6-.5.3-1.2.4-1.9.3-1.8-.2-3.2-1.6-3.2-3.5 0-.9.4-1.8 1-2.5.7-.7 1.5-1 2.5-1 1.1 0 2.1.5 2.7 1.1zm-10 0c1 1.1 1.6 2.3 1.6 4.3 0 3.5-2.5 6.6-6 8.2L4 17.5c3.3-1.8 4-4.1 4.2-5.6-.5.3-1.2.4-1.9.3-1.8-.2-3.2-1.7-3.2-3.5 0-.9.4-1.8 1-2.5.7-.7 1.5-1 2.5-1 1.1 0 2.1.5 2.7 1.1z" fill="#ed5656" opacity="1" data-original="#000000" class=""></path></g></svg>
+                                    </div>
+                                    <img src="./Images/pink bg.jpg" alt="">
+                                    <div class="d-flex align-items-center my-3">
+                                        <div class="left me-2">
+                                          <img src="./Images/undraw_male_avatar_323b.svg" alt="..." class="profile-pic">
+                                        </div>
+                                        <div class="right">
+                                            <p class="mb-0">Luke Olfert</p>
+                                            <p class="mb-0">New York, USA</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <div class="d-flex">
+                                        <p>Underwent procedure for <br> retinal detachment</p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M19.3 6.3c1 1.1 1.6 2.3 1.6 4.3 0 3.5-2.5 6.6-6 8.2l-.9-1.3c3.3-1.8 4-4.1 4.2-5.6-.5.3-1.2.4-1.9.3-1.8-.2-3.2-1.6-3.2-3.5 0-.9.4-1.8 1-2.5.7-.7 1.5-1 2.5-1 1.1 0 2.1.5 2.7 1.1zm-10 0c1 1.1 1.6 2.3 1.6 4.3 0 3.5-2.5 6.6-6 8.2L4 17.5c3.3-1.8 4-4.1 4.2-5.6-.5.3-1.2.4-1.9.3-1.8-.2-3.2-1.7-3.2-3.5 0-.9.4-1.8 1-2.5.7-.7 1.5-1 2.5-1 1.1 0 2.1.5 2.7 1.1z" fill="#ed5656" opacity="1" data-original="#000000" class=""></path></g></svg>
+                                    </div>
+                                    <img src="./Images/pink bg.jpg" alt="">
+                                    <div class="d-flex align-items-center my-3">
+                                        <div class="left me-2">
+                                          <img src="./Images/undraw_male_avatar_323b.svg" alt="..." class="profile-pic">
+                                        </div>
+                                        <div class="right">
+                                            <p class="mb-0">Luke Olfert</p>
+                                            <p class="mb-0">New York, USA</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            
+                            </div>
+                            
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="fixed-form m-2">
+                        <h2 class="text-primary" style="font-family: cursive;">Need Help?</h2>
+                        <p>Just let us know we will be happy to assist you.</p>
+
+                        <form id="contactForm" method="post" onsubmit="submitForm(event)">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" required  placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" required placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Phone Number">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="description" name="description" required placeholder="Describe your treatment requirement">
+                            </div>
+                            <button type="submit" class="rounded" style="width: 100%; background-color: #4992ff; border: none; padding: 15px 0;">Submit</button>
+                        </form>
+                    </div>
+                </div>                
+            </div>   
+
+        </div>
+    </section>
+
+    <section class="top-doctors p-2">
+        <div class="container">
+            <h4 class="text-center mt-2">
+                <span class="red-dot">Doctors</span> <br>
+                Top Orthopedic <span style="color: blue;">Doctors</span>
+    
+                
+            </h4>
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <img src="./Images/pink bg.jpg" alt="">
+                    <span class="red-dot" style="font-family: cursive my-1">Dr. Faique Falke</span> <br>
+                    <p class="mb-0 fw-bold">Musaffah Industrial - Abu Dhabi</p>
+                    <p>Doctor Degree & Specialist</p>
+                </div>
+                <div class="item">
+                    <img src="./Images/pink bg.jpg" alt="">
+                    <span class="red-dot" style="font-family: cursive my-1">Dr. Faique Falke</span> <br>
+                    <p class="mb-0 fw-bold">Musaffah Industrial - Abu Dhabi</p>
+                    <p>Doctor Degree & Specialist</p>
+                </div>
+                <div class="item">
+                    <img src="./Images/pink bg.jpg" alt="">
+                    <span class="red-dot" style="font-family: cursive my-1">Dr. Faique Falke</span> <br>
+                    <p class="mb-0 fw-bold">Musaffah Industrial - Abu Dhabi</p>
+                    <p>Doctor Degree & Specialist</p>
+                </div>
+                <div class="item">
+                    <img src="./Images/pink bg.jpg" alt="">
+                    <span class="red-dot" style="font-family: cursive my-1">Dr. Faique Falke</span> <br>
+                    <p class="mb-0 fw-bold">Musaffah Industrial - Abu Dhabi</p>
+                    <p>Doctor Degree & Specialist</p>
+                </div>
+                <div class="item">
+                    <img src="./Images/pink bg.jpg" alt="">
+                    <span class="red-dot" style="font-family: cursive my-1">Dr. Faique Falke</span> <br>
+                    <p class="mb-0 fw-bold">Musaffah Industrial - Abu Dhabi</p>
+                    <p>Doctor Degree & Specialist</p>
+                </div>
+                <div class="item">
+                    <img src="./Images/pink bg.jpg" alt="">
+                    <span class="red-dot" style="font-family: cursive my-1">Dr. Faique Falke</span> <br>
+                    <p class="mb-0 fw-bold">Musaffah Industrial - Abu Dhabi</p>
+                    <p>Doctor Degree & Specialist</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="Hospital p-2 mt-4">
+        <div class="container">
+            <h4 class="text-center mt-2">
+                <span class="red-dot">Hospital</span> <br>
+                Recommended <span style="color: blue;">Hospitals</span>
+    
+                
+            </h4>
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <img src="./Images/hospital 1.1.jpg" alt="" loading="lazy">
+                    <span class="red-dot" style="font-family: cursive my-1">Apollo Hospital</span> <br>
+                    <p class="mb-0 fw-bold">Bangalore</p>
+                </div>
+                <div class="item">
+                    <img src="./Images/hospital 2.1.jpg" alt="" loading="lazy">
+                    <span class="red-dot" style="font-family: cursive my-1">Apollo Hospital</span> <br>
+                    <p class="mb-0 fw-bold">Bangalore</p>
+                </div>
+                <div class="item">
+                    <img src="./Images/hospital 3.1.jpg" alt="" loading="lazy">
+                    <span class="red-dot" style="font-family: cursive my-1">Apollo Hospital</span> <br>
+                    <p class="mb-0 fw-bold">Bangalore</p>
+                </div>
+                <div class="item">
+                    <img src="./Images/hospital 1.1.jpg" alt="" loading="lazy">
+                    <span class="red-dot" style="font-family: cursive my-1">Apollo Hospital</span> <br>
+                    <p class="mb-0 fw-bold">Bangalore</p>
+                </div>
+                <div class="item">
+                    <img src="./Images/hospital 2.1.jpg" alt="" loading="lazy">
+                    <span class="red-dot" style="font-family: cursive my-1">Apollo Hospital</span> <br>
+                    <p class="mb-0 fw-bold">Bangalore</p>
+                </div>
+                <div class="item">
+                    <img src="./Images/hospital 3.1.jpg" alt="" loading="lazy">
+                    <span class="red-dot" style="font-family: cursive my-1">Apollo Hospital</span> <br>
+                    <p class="mb-0 fw-bold">Bangalore</p>
+                </div>
+            </div>
+
+            <div class="d-flex text-center align-items-center justify-content-center">
+                <h4 class="mb-0">Don't hesitate, contact us for better help and services.</h4>
+                <a href="#" class="red-dot text-decoration-underline">  Explore all Hospitals</a>
+            </div>
+           
+        </div>
+        
+    </section>
+
+    <section class="stay-healthy text-light mt-4">
+        <div class="container text-center">
+            <div class="py-4">
+                <h3>Stay healthy and strong to enjoy life</h3>
+                <p class="fw-bold fs-2">We have team of healthcare experts</p>
+    
+                <div class="d-flex justify-content-center align-items-center">
+                    <button type="button" class="btn btn-primary rounded-0 mx-1">Enquire Now</button> 
+                    <span class="mx-1">|</span>
+                    <p class="mb-0 mx-1">+91 898 777 9999</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="text-light footer-links" style="background: url(./Images/skyline.avif);">
+        <div class="container py-3">
+            <div class="d-flex flex-wrap">
+                <div class="col-lg-3 col-md-6 col-6">
+                    <p>Important Links</p>
+                    <ul>
+                        <li><span class="span-blue">-</span><a href="">Home</a></li>
+                        <li><span class="span-blue">-</span><a href="">About Us</a></li>
+                        <li><span class="span-blue">-</span><a href="">FAQs</a></li>
+                        <li><span class="span-blue">-</span><a href="">Blog</a></li>
+                        <li><span class="span-blue">-</span><a href="">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-6">
+                    <p>Top Hospitals</p>
+                    <ul>
+                        <li><span class="span-blue">-</span><a href="">Home</a></li>
+                        <li><span class="span-blue">-</span><a href="">About Us</a></li>
+                        <li><span class="span-blue">-</span><a href="">FAQs</a></li>
+                        <li><span class="span-blue">-</span><a href="">Blog</a></li>
+                        <li><span class="span-blue">-</span><a href="">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12">
+                    <p>Speciality Treatments</p>
+                    <ul>
+                        <li><span class="span-blue">-</span><a href="">Home</a></li>
+                        <li><span class="span-blue">-</span><a href="">About Us</a></li>
+                        <li><span class="span-blue">-</span><a href="">FAQs</a></li>
+                        <li><span class="span-blue">-</span><a href="">Blog</a></li>
+                        <li><span class="span-blue">-</span><a href="">Contact Us</a></li>
+                        <li><span class="span-blue">-</span><a href="">Blog</a></li>
+                        <li><span class="span-blue">-</span><a href="">Contact Us</a></li>
+                        <li><span class="span-blue">-</span><a href="">Blog</a></li>
+                        <li><span class="span-blue">-</span><a href="">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="f-card text-dark rounded-2 p-3 mt-3"  style="background: white;">
+                        <div class="d-flex align-items-center justify-content-evenly">
+                            <div class="col-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" x="0" y="0" viewBox="0 0 332 332" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M166 0C74.4 0 0 74.4 0 166s74.4 166 166 166 166-74.4 166-166S257.6 0 166 0zm0 317.6c-83.6 0-151.6-68-151.6-151.6S82.4 14.4 166 14.4s151.6 68 151.6 151.6-68 151.6-151.6 151.6z" fill="#000000" opacity="1" data-original="#000000" class=""></path><path d="M252.4 130H202V79.6c0-4-3.2-7.2-7.2-7.2h-57.6c-4 0-7.2 3.2-7.2 7.2V130H79.6c-4 0-7.2 3.2-7.2 7.2v57.6c0 4 3.2 7.2 7.2 7.2H130v50.4c0 4 3.2 7.2 7.2 7.2h57.6c4 0 7.2-3.2 7.2-7.2V202h50.4c4 0 7.2-3.2 7.2-7.2v-57.6c-.4-4-3.6-7.2-7.2-7.2zm-6.8 57.6h-50.8c-4 0-7.2 3.2-7.2 7.2v50.4h-43.2v-50.4c0-4-3.2-7.2-7.2-7.2H86.8v-43.2h50.4c4 0 7.2-3.2 7.2-7.2V86.8H188v50.4c0 4 3.2 7.2 7.2 7.2h50.4v43.2z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
+                            </div>
+                            <div class="col">
+                                <p class="mb-0">Are you doctor?</p>
+                                <p class="mb-0">lorem 5</p>
+                            </div>
+                        </div>
+                        <p class="mt-2">Lorem ipsum, dolor</p>
+                    </div>
+                    
+
+                    <p>Medical Tourism Destination</p>
+                    <ul>
+                        <li><span class="span-blue">-</span><a href="">Home</a></li>
+                        <li><span class="span-blue">-</span><a href="">About Us</a></li>
+                        <li><span class="span-blue">-</span><a href="">FAQs</a></li>
+                        <li><span class="span-blue">-</span><a href="">Blog</a></li>
+                        <li><span class="span-blue">-</span><a href="">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="./Images/logo.png" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <h3>About Aafiya Mediretreats</h3>
+                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta velit nulla temporibus incidunt omnis culpa error quis dolorem, cupiditate necessitatibus nemo libero quos provident ducimus quod pariatur doloribus odio nostrum.</p>
+                </div>
+                <div class="col-md-3">
+                    <p>Follow us on</p>
+                    <div class="d-flex logos">
+                        <img src="./Images/youtube.svg" alt="">
+                        <img src="./Images/instagram.svg" alt="">
+                        <img src="./Images/twitter.svg" alt="">
+                        <img src="./Images/facebook.svg" alt="">
+                    </div>
+                    <p class="mb-0">Customer Service</p>
+                    <p class="mb-0 fs-3" style="color: lightblue;">+91 9856555666</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <section class="copyright">
+        <div class="container">
+            <div class="d-lg-flex text-center">
+                <div class="p-2 flex-grow-1">Copyright © 2020 Aafiya Mediretreats. All Rights Reserved. Developed by Akshal Shetty</div>
+                <div class="p-2"><a href="">Terms And Conditions</a></div>
+                <div class="p-2"><a href="">Privacy Policy</a></div>
+              </div>
+        </div> 
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".owl-carousel").owlCarousel({
+                items: 3,
+                loop: true,
+                autoplay: true, // Enable autoplay
+                autoplayTimeout: 3000,
+                responsive:{
+                    0:{
+                        items: 1
+                    },
+                    768:{
+                        items: 2
+                    },
+                    992:{
+                        items: 3
+                    }
+                }
+            });
+        });
+
+                window.addEventListener("load", function() {
+            const loader = document.querySelector(".page-loader");
+            loader.style.opacity = 0; // Fade out the loader
+            setTimeout(function() {
+                loader.style.display = "none"; // Hide the loader after fading out
+            }, 500); // Adjust the timeout as needed
+        });
+    </script>
+    <script>
+        const nav = document.querySelector(".nav"),
+  searchIcon = document.querySelector("#searchIcon"),
+  navOpenBtn = document.querySelector(".navOpenBtn"),
+  navCloseBtn = document.querySelector(".navCloseBtn");
+
+searchIcon.addEventListener("click", () => {
+  nav.classList.toggle("openSearch");
+  nav.classList.remove("openNav");
+  if (nav.classList.contains("openSearch")) {
+    return searchIcon.classList.replace("uil-search", "uil-times");
+  }
+  searchIcon.classList.replace("uil-times", "uil-search");
+});
+
+navOpenBtn.addEventListener("click", () => {
+  nav.classList.add("openNav");
+  nav.classList.remove("openSearch");
+  searchIcon.classList.replace("uil-times", "uil-search");
+});
+navCloseBtn.addEventListener("click", () => {
+  nav.classList.remove("openNav");
+});
+
+function submitForm(event) {
+    event.preventDefault(); // Prevent the form from submitting
+    // Get form data
+    const formData = new FormData(document.getElementById('contactForm'));
+    
+    // Simulate sending data to server (in a real scenario, you would send this data to your server-side script)
+    const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        description: formData.get('description')
+    };
+
+    // Here you can log the data or further process it
+    console.log(data);
+    alert('Form submitted successfully! Check console for data.');
+}
+    </script>
+
+    
+</body>
+</html>
